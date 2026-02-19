@@ -2,30 +2,35 @@
 
 A React + TypeScript application that allows users to search for GitHub users and explore their repositories using the GitHub REST API.
 
-## 🚀 Tech Stack
+## 🚀 Features
+
+- Search GitHub users
+- Fetch user profile data
+- Fetch and display repositories
+- Loading state handling
+- Error handling
+- Debounced API requests (500ms)
+- Strong TypeScript typing
+- Conditional rendering
+- Clean component structure
+
+## 🧠 Technical Concepts Applied
+
+- useState for state management
+- useEffect for side effects
+- Asynchronous data fetching (async/await)
+- Conditional rendering
+- Virtual DOM & reconciliation
+- List rendering with stable keys
+- Debounce implementation
+- Lifting state up
+
+## 🛠 Tech Stack
 
 - React
 - TypeScript
 - Vite
 - GitHub REST API
-
-## 📌 Features (in progress)
-
-- Search GitHub users
-- Fetch repositories dynamically
-- Handle loading and error states
-- Filter repositories by language
-- Clean and responsive UI
-
-## 🧠 Learning Goals
-
-This project focuses on:
-
-- Understanding React state management with useState
-- Managing side effects with useEffect
-- Strong typing with TypeScript
-- API integration
-- Clean component architecture
 
 ## 📦 Installation
 
