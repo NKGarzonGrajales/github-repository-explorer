@@ -33,7 +33,10 @@ This project focuses on:
 npm install
 npm run dev
 
-🌍 Live Demo
+
+```bash
+
+## 🌍 Live Demo
 
 Coming soon...
 
