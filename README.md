@@ -34,8 +34,6 @@ npm install
 npm run dev
 
 
-```bash
-
 ## 🌍 Live Demo
 
 Coming soon...
