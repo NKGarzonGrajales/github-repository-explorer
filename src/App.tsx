@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RepoList from "./components/RepoList";
+import UserCard from "./components/UserCard";
 
 type GitHubUser = {
   login: string;
@@ -83,7 +84,7 @@ function App() {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      {user && (
+    {/*  {user && (
         <div>
           <img src={user.avatar_url} alt={user.login} width="100" />
           <h2>{user.login}</h2>
@@ -92,7 +93,8 @@ function App() {
             View Profile
           </a>
         </div>
-      )}
+      )} */}
+      <UserCard user={user} />
 
       <RepoList repos={repos} />
 
