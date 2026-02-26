@@ -4,6 +4,7 @@ export type GitHubUser = {
   avatar_url: string;
   html_url: string;
   public_repos: number;
+  stargazers_count: number;
 };
 
 export type GitHubRepo = {

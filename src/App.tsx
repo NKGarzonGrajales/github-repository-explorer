@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RepoList from "./components/RepoList";
 import UserCard from "./components/UserCard";
-import type { GitHubRepo, GitHubUser } from "./types/github";
-import { fetchGitHubRepos, fetchGitHubUser } from "./services/githubService";
+/*import type { GitHubRepo, GitHubUser } from "./types/github";*/
+/*import { fetchGitHubRepos, fetchGitHubUser } from "./services/githubService";*/
+import { useGitHubUser } from "./hooks/useGitHubUser";
 
 function App() {
   const [username, setUsername] = useState("");
-  const [user, setUser] = useState<GitHubUser | null>(null);
+  const { user, repos, loading, error } = useGitHubUser(username);
+  /*const [user, setUser] = useState<GitHubUser | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
@@ -43,7 +45,7 @@ function App() {
           setRepos(reposData); 
 
           
-          */
+          
        
   const userData = await fetchGitHubUser(username);
   setUser(userData);
@@ -64,7 +66,7 @@ function App() {
     }, 500);
 
     return () => clearTimeout(timeoutId);
-  }, [username]);
+  }, [username]);*/
 
   return (
     <div style={{ padding: "2rm" }}>
@@ -77,9 +79,10 @@ function App() {
         maxLength={15}
         onChange={(e) => setUsername(e.target.value)}
       />
-
+     {username.length > 0 && username.length < 3 && (
+      <p>Username must be at least 3 characters</p>
+)}
       {loading && <p>Loading...</p>}
-
       {error && <p style={{ color: "red" }}>{error}</p>}
 
     {/*  {user && (
@@ -93,7 +96,6 @@ function App() {
         </div>
       )} */}
       <UserCard user={user} />
-
       <RepoList repos={repos} />
 
 {/*      {repos.length > 0 && (
