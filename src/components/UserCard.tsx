@@ -1,12 +1,5 @@
+import type { GitHubUser } from "../types/github";
 
-
-type GitHubUser = {
-  login: string;
-  id: number;
-  avatar_url: string;
-  html_url: string;
-  public_repos: number;
-};
 
 type UserCardProps = {
   user: GitHubUser | null;

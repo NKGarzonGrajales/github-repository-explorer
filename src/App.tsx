@@ -1,21 +1,8 @@
 import { useEffect, useState } from "react";
 import RepoList from "./components/RepoList";
 import UserCard from "./components/UserCard";
-
-type GitHubUser = {
-  login: string;
-  id: number;
-  avatar_url: string;
-  html_url: string;
-  public_repos: number;
-};
-
-type GitHubRepo = {
-  id: number;
-  name: string;
-  html_url: string;
-  language: string | null;
-};
+import type { GitHubRepo, GitHubUser } from "./types/github";
+import { fetchGitHubRepos, fetchGitHubUser } from "./services/githubService";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -33,7 +20,7 @@ function App() {
           setLoading(true);
           setError(null);
 
-          const response = await fetch(
+         /* const response = await fetch(
             `https://api.github.com/users/${username}`
           );
 
@@ -53,10 +40,21 @@ function App() {
           }
 
           const reposData: GitHubRepo[] = await reposResponse.json();
-          setRepos(reposData);
-        } catch {
+          setRepos(reposData); 
+
+          
+          */
+       
+  const userData = await fetchGitHubUser(username);
+  setUser(userData);
+
+  const reposData = await fetchGitHubRepos(username);
+  setRepos(reposData);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error) {
           setError("Something went wrong");
           setUser(null);
+          setRepos([])
         } finally {
           setLoading(false);
         }
