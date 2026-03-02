@@ -8,6 +8,7 @@ export type GitHubUser = {
 };
 
 export type GitHubRepo = {
+  stargazers_count: ReactNode;
   id: number;
   name: string;
   html_url: string;

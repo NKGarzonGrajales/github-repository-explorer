@@ -1,13 +1,5 @@
+import type { GitHubRepo } from "../types/github";
 
-
-
-
-type GitHubRepo = {
-  id: number;
-  name: string;
-  html_url: string;
-  language: string | null;
-};
 
 type RepoListProps = {
   repos: GitHubRepo[];
@@ -16,11 +8,15 @@ type RepoListProps = {
 function RepoList({ repos }: RepoListProps) {
   if (repos.length === 0) return null;
 
+  const sortedRepos = [...repos].sort(
+  (a, b) => b.stargazers_count - a.stargazers_count
+);
+
   return (
     <div>
       <h3>Repositories:</h3>
       <ul>
-        {repos.map((repo) => (
+        {sortedRepos.map((repo) => (
           <li key={repo.id}>
             <a
               href={repo.html_url}
@@ -32,6 +28,7 @@ function RepoList({ repos }: RepoListProps) {
             {repo.language && (
               <span> — {repo.language}</span>
             )}
+            <span> ⭐ {repo.stargazers_count}</span>
           </li>
         ))}
       </ul>
