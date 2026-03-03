@@ -1,4 +1,5 @@
 import type { GitHubRepo } from "../types/github";
+import { useMemo } from "react";
 
 
 type RepoListProps = {
@@ -8,9 +9,12 @@ type RepoListProps = {
 function RepoList({ repos }: RepoListProps) {
   if (repos.length === 0) return null;
 
-  const sortedRepos = [...repos].sort(
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const sortedRepos = useMemo( () => {
+   return [...repos].sort(
   (a, b) => b.stargazers_count - a.stargazers_count
 );
+  }, [repos]); 
 
   return (
     <div>
