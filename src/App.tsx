@@ -69,8 +69,16 @@ function App() {
   }, [username]);*/
 
   return (
-    <div style={{ padding: "2rm" }}>
-      <h1>Github Explorer</h1>
+    <div style={{ 
+      padding: "2rem", 
+      width: "100%",
+      maxWidth: "600px",
+      background: "white",
+      borderRadius: "12px",
+      boxShadow: "0 8px 20px, rgba (0 0 0 0.08)",
+     }}
+    >
+      <h1 style={{textAlign: "center"}}>Github Explorer</h1>
 
       <input
         type="text"
@@ -80,7 +88,7 @@ function App() {
         onChange={(e) => setUsername(e.target.value)}
       />
      {username.length > 0 && username.length < 3 && (
-      <p>Username must be at least 3 characters</p>
+      <p style={{color: "gray"}}>Username must be at least 3 characters</p>
 )}
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
