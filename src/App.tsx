@@ -70,25 +70,44 @@ function App() {
 
   return (
     <div style={{ 
-      padding: "2rem", 
-      width: "100%",
-      maxWidth: "600px",
-      background: "white",
-      borderRadius: "12px",
-      boxShadow: "0 8px 20px, rgba (0 0 0 0.08)",
+            padding: "2rem", 
+            width: "100%",
+            maxWidth: "600px",
+            background: "white",
+            borderRadius: "12px",
+            boxShadow: "0 8px 20px, rgba (0 0 0 0.08)",
      }}
     >
-      <h1 style={{textAlign: "center"}}>Github Explorer</h1>
+      <h1 style={{textAlign: "center",
+
+      }}>Github Explorer</h1>
 
       <input
         type="text"
         placeholder="Enter Github username"
         value={username}
-        maxLength={15}
+        maxLength={39}
         onChange={(e) => setUsername(e.target.value)}
+        style={{
+            textAlign: "center",
+            display: "block",
+            margin: "0 auto",
+            marginBottom: "10px",
+            padding: "10px",
+            borderRadius: "8px",
+            border: "1px solid #efe7e7",
+            width: "80%",
+            backgroundColor: "#3a3e3e",
+            fontSize: "1.1rem",
+            color: "rgb(240, 216, 232)"
+            
+        }}
       />
      {username.length > 0 && username.length < 3 && (
-      <p style={{color: "gray"}}>Username must be at least 3 characters</p>
+      <p style={{ 
+        fontSize: "1rem",
+        color: "#1f2937",
+      }}>Username must be at least 3 characters</p>
 )}
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}

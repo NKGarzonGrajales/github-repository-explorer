@@ -14,6 +14,7 @@ function UserCard({ user }: UserCardProps) {
         src={user.avatar_url}
         alt={user.login}
         width="100"
+        style={{ marginTop: "20px" }}
       />
       <h2>{user.login}</h2>
       <p>Public Repos: {user.public_repos}</p>
