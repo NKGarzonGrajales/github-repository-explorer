@@ -90,6 +90,21 @@ button:focus-visible {
   border: 1px solid #ccc;
 }
 
+.repo-item {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.repo-item:hover {
+  background-color: #f3f4f6;
+  transform: translateX(3px);
+}
+
+.repo-item:hover a {
+  color: #2563eb;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

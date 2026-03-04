@@ -25,7 +25,8 @@ function RepoList({ repos }: RepoListProps) {
               style={{
                 padding: "10px 0",
                 borderBottom: "1px solid #e5e7eb"
-              }}>
+              }}
+              className="repo-item">
             <a
               href={repo.html_url}
               target="_blank"
