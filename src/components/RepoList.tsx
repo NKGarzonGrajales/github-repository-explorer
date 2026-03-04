@@ -21,19 +21,36 @@ function RepoList({ repos }: RepoListProps) {
       <h3>Repositories:</h3>
       <ul>
         {sortedRepos.map((repo) => (
-          <li key={repo.id}>
+          <li key={repo.id}
+              style={{
+                padding: "10px 0",
+                borderBottom: "1px solid #e5e7eb"
+              }}>
             <a
               href={repo.html_url}
               target="_blank"
               rel="noreferrer"
+              style={{
+                color: "#1f2937",
+                fontWeight: "600",
+                textDecoration: "none"
+              }}
             >
               {repo.name}
             </a>
+      <div 
+      style={{
+      fontSize: "14px",
+      color: "#6b7280",
+      marginTop: "4px"
+    }}
+  > 
             {repo.language && (
-              <span> — {repo.language}</span>
+              <span > — {repo.language}</span>
             )}
-            <span> ⭐ {repo.stargazers_count}</span>
-          </li>
+            <span style={{ marginLeft: "10px" }}> ⭐ {repo.stargazers_count}</span>
+            </div>
+          </li>          
         ))}
       </ul>
     </div>

@@ -28,6 +28,7 @@ a:hover {
   color: #535bf2;
 }
 
+
 body {
   margin: 0;
   display: flex;
@@ -66,6 +67,27 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.search-container {
+  position: relative;
+  width: 70%;
+  margin: 0 auto 20px auto;
+}
+
+.search-icon {
+  position: absolute;
+  left: 260px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 @media (prefers-color-scheme: light) {

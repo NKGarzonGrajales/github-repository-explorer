@@ -82,12 +82,15 @@ function App() {
 
       }}>Github Explorer</h1>
 
+  <div className="search-container">
+  <span className="search-icon">🔍</span>
       <input
         type="text"
         placeholder="Enter Github username"
         value={username}
         maxLength={39}
         onChange={(e) => setUsername(e.target.value)}
+        className="search-input"
         style={{
             textAlign: "center",
             display: "block",
@@ -100,10 +103,11 @@ function App() {
             backgroundColor: "#3a3e3e",
             fontSize: "1.1rem",
             color: "rgb(240, 216, 232)"
-            
         }}
       />
-     {username.length > 0 && username.length < 3 && (
+      </div>
+      
+    {username.length > 0 && username.length < 3 && (
       <p style={{ 
         fontSize: "1rem",
         color: "#1f2937",
