@@ -20,7 +20,7 @@ A **React + TypeScript** application that allows users to search for GitHub user
 
 ## 🌐 Live Demo
 
-Coming soon...
+https://github-repository-explorer-snowy.vercel.app/
 
 ---
 
