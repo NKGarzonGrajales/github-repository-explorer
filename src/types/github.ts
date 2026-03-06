@@ -1,3 +1,9 @@
+import type { ReactNode } from "react"; 
+
+export type TitleCardProps = {
+  children: ReactNode;
+};
+
 export type GitHubUser = {
   login: string;
   id: number;
