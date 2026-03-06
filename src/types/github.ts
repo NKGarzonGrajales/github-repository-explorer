@@ -14,7 +14,7 @@ export type GitHubUser = {
 };
 
 export type GitHubRepo = {
-  stargazers_count: ReactNode;
+  stargazers_count: number;
   id: number;
   name: string;
   html_url: string;
