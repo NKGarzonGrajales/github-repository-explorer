@@ -13,12 +13,12 @@ function RepoList({ repos }: RepoListProps) {
   const sortedRepos = useMemo( () => {
    return [...repos].sort(
   (a, b) => b.stargazers_count - a.stargazers_count
-);
+).slice(0, 5);;
   }, [repos]); 
 
   return (
     <div>
-      <h3>Repositories:</h3>
+      <h3>Top Repositories:</h3>
       <ul>
         {sortedRepos.map((repo) => (
           <li key={repo.id}
